@@ -6,63 +6,218 @@
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Navigation bar with background image */
+        /* Navigation styles */
         nav {
             background-image: url('bg2.png');
             background-size: cover;
             background-position: center;
         }
 
-        /* Hero section with a fully filled background and transparency */
-        #hero {
+        nav ul li a {
+            font-size: 1.5em;
+        }
+
+        /* Intro section styles */
+        #intro {
             background-image: url('bg1.png');
             background-size: cover;
             background-position: center;
-            opacity: 0.7; /* Makes the background 70% transparent */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            height: 100vh; /* Fill the entire viewport height */
+            height: 100vh;
+            opacity: 0.7;
         }
 
-        #hero h1 {
+        #intro h1 {
             color: black;
-            background-color: rgba(255, 255, 255, 0.6); /* Add a semi-transparent white background for text */
+            text-transform: uppercase;
+            background-color: white;
             padding: 20px;
             border-radius: 10px;
-            font-size: 2.5em;
+            font-size: 3.5em;
+            text-shadow: 0 0 5px rgba(0, 0, 128, 0.3),
+                         0 0 10px rgba(0, 0, 128, 0.3),
+                         0 0 15px rgba(0, 0, 128, 0.3),
+                         0 0 20px rgba(0, 0, 128, 0.3),
+                         0 0 25px rgba(0, 0, 128, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
-        /* About section styling */
+        /* Wave animation for emoji */
+        .wave-emoji {
+            display: inline-block;
+            animation: wave 1.5s infinite;
+            transform-origin: 70% 70%;
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(0, 0, 128, 0.3),
+                            0 0 10px rgba(0, 0, 128, 0.3),
+                            0 0 15px rgba(0, 0, 128, 0.3),
+                            0 0 20px rgba(0, 0, 128, 0.3),
+                            0 0 25px rgba(0, 0, 128, 0.3);
+            }
+            to {
+                text-shadow: 0 0 10px rgba(0, 0, 128, 0.4),
+                            0 0 20px rgba(0, 0, 128, 0.4),
+                            0 0 30px rgba(0, 0, 128, 0.4),
+                            0 0 40px rgba(0, 0, 128, 0.4),
+                            0 0 50px rgba(0, 0, 128, 0.4);
+            }
+        }
+
+        /* About section styles */
         #about {
             background-color: #37474F;
             color: white;
+            padding: 40px 20px;
         }
 
         #about p, #about h2 {
             color: white;
+        }
+
+        .motto {
+            font-size: 2.5em;
+            letter-spacing: 0.1em;
+            line-height: 1.5;
+            margin: 30px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .wandering-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wandering-letter {
+            padding: 5px;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .wandering-letter:nth-child(2) { transform: translateX(30px); }
+        .wandering-letter:nth-child(3) { transform: translateX(60px); }
+
+        /* Skills section styles */
+        #skills {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .skill-grid img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin: 10px;
+        }
+
+        /* Projects section styles */
+        #projects {
+            background-color: #37474F;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .project {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .project-image {
+            width: 300px !important;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        /* Contact section styles */
+        #contact {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #37474F;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 40px;
+        }
+
+        footer a {
+            margin: 0 10px;
+        }
+
+        footer img {
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#hero">About</a></li>
+            <li><a href="#intro">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <main>
-        <section id="hero">
-            <h1>Hello there, I'm Jeevietha! <span>👋</span></h1>
+        <section id="intro">
+            <h1>HELLO THERE, I'M JEEVIETHA! <span class="wave-emoji">👋</span></h1>
         </section>
         <section id="about">
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Me</h2>
-                    <p><strong>WANDER OFTEN. WONDER ALWAYS.</strong></p>
+                    <div class="motto">
+                        <strong>WANDER OFTEN. WONDER ALWAYS.</strong>
+                    </div>
                     <p>
                         I am a first-year engineering student with a passion for
                         cybersecurity and artificial intelligence, aiming to make a
@@ -90,17 +245,17 @@
             </div>
             <p>... and many more!</p>
         </section>
-        <section id="projects" style="background-color: #37474F;">
+        <section id="projects">
             <h2>Projects</h2>
-            <div class="project" style="display: flex; align-items: center; margin-bottom: 20px;">
-                <img src="project1.png" alt="Expense Tracker" class="project-image" style="width: 150px; height: auto; margin-right: 20px;">
+            <div class="project">
+                <img src="project1.png" alt="Expense Tracker" class="project-image">
                 <div>
                     <h3>Expense Tracker</h3>
                     <p>Developed a tracker using C to categorize expenses.</p>
                 </div>
             </div>
-            <div class="project" style="display: flex; align-items: center; margin-bottom: 20px;">
-                <img src="project2.png" alt="Timetable Generator" class="project-image" style="width: 150px; height: auto; margin-right: 20px;">
+            <div class="project">
+                <img src="project2.png" alt="Timetable Generator" class="project-image">
                 <div>
                     <h3>Timetable Generator</h3>
                     <p>Developed a timetable generator for institutions using C.</p>
