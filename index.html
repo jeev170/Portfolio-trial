@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navigation bar with background image */
+        nav {
+            background-image: url('bg2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Hero section with a fully filled background and transparency */
+        #hero {
+            background-image: url('bg1.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7; /* Makes the background 70% transparent */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh; /* Fill the entire viewport height */
+        }
+
+        #hero h1 {
+            color: black;
+            background-color: rgba(255, 255, 255, 0.6); /* Add a semi-transparent white background for text */
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 2.5em;
+        }
+
+        /* About section styling */
+        #about {
+            background-color: #37474F;
+            color: white;
+        }
+
+        #about p, #about h2 {
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -16,10 +55,10 @@
         </ul>
     </nav>
     <main>
-        <section id="hero" style="background-image: url('bg1.png');">
-        <h1 style="color: black;">Hello there, I'm Jeevietha! <span>👋</span></h1>
+        <section id="hero">
+            <h1>Hello there, I'm Jeevietha! <span>👋</span></h1>
         </section>
-        <section id="about" style="background-image: url('bg2.png');">
+        <section id="about">
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Me</h2>
