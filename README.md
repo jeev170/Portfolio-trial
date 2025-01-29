@@ -1,1 +1,1 @@
-# Portfolio-trial
+This is the first website I've designed. It's my personal portfolio with index.html index.js and style.css files and image sthat form my website. I aim to better my skills and continue to develop my website. Here's the link : https://jeev170.github.io/
