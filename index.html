@@ -4,18 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
         /* Navigation styles */
         nav {
             background-image: url('bg2.png');
             background-size: cover;
             background-position: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
         nav ul li a {
             font-size: 2em;
             color: white;
+            text-decoration: none;
+            padding: 10px 20px;
         }
 
         /* Intro section styles */
@@ -73,6 +95,9 @@
 
         #about p, #about h2 {
             color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .motto {
@@ -91,45 +116,32 @@
         }
 
         /* Bike animation styles */
-       /* Replace the existing bike animation styles with these: */
+        .bike-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 120px;
+            margin: 20px 0;
+            background-color: #455A64;
+        }
 
-.bike-container {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 120px;
-    margin: 20px 0;
-    background-color: #455A64;
-}
+        .bike-emoji {
+            display: inline-block;
+            position: absolute;
+            font-size: 4em;
+            animation: bikeRide 10s linear infinite;
+        }
 
-.bike-emoji {
-    display: inline-block;
-    position: absolute;
-    font-size: 4em;
-    animation: bikeRide 10s linear infinite;
-}
+        @keyframes bikeRide {
+            0% { left: calc(100% + 100px); }
+            100% { left: -100px; }
+        }
 
-@keyframes bikeRide {
-    0% {
-        left: calc(100% + 100px);
-    }
-    100% {
-        left: -100px;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .bike-container {
-        height: 100px;
-    }
-    .bike-emoji {
-        font-size: 3em;
-    }
-}        /* Skills section styles */
+        /* Skills section styles */
         #skills {
             padding: 40px 20px;
             text-align: center;
+            background-color: white;
         }
 
         .skill-grid {
@@ -153,30 +165,43 @@
             background-color: #455A64;
             padding: 40px 20px;
             color: white;
-            text-align: center;
         }
 
         .project {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 30px;
             margin-bottom: 40px;
             padding: 20px;
-            max-width: 800px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .project-image {
-            width: 3600px !important;
+            width: 60% !important;
             height: auto;
-            margin-bottom: 20px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .project div {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .project h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
         }
 
         /* Contact section styles */
         #contact {
             padding: 40px 20px;
             text-align: center;
+            background-color: white;
         }
 
         .phone-emoji {
@@ -197,6 +222,7 @@
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            font-size: 1em;
         }
 
         button {
@@ -206,6 +232,12 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #37474F;
         }
 
         footer {
@@ -214,6 +246,12 @@
 
         footer a {
             margin: 0 10px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        footer a:hover {
+            transform: translateY(-3px);
         }
 
         footer img {
@@ -223,8 +261,18 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            nav {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
             nav ul li a {
-                font-size: 1.5em;
+                font-size: 1.2em;
+                padding: 8px 12px;
             }
 
             #intro h1 {
@@ -233,6 +281,11 @@
 
             .motto {
                 font-size: 2em;
+            }
+
+            .project {
+                flex-direction: column;
+                align-items: center;
             }
 
             .project-image {
@@ -278,16 +331,18 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#intro">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    
     <main>
         <section id="intro">
             <h1>HELLO THERE, I'M JEEVIETHA! <span class="wave-emoji">👋</span></h1>
         </section>
+
         <section id="about">
             <div class="about-content">
                 <div class="about-text">
@@ -309,6 +364,7 @@
                 </div>
             </div>
         </section>
+
         <section id="skills">
             <h2>Skills</h2>
             <div class="skill-grid">
@@ -325,6 +381,7 @@
             </div>
             <p>... and many more!</p>
         </section>
+
         <section id="projects">
             <h2>Projects</h2>
             <div class="project">
@@ -342,6 +399,7 @@
                 </div>
             </div>
         </section>
+
         <section id="contact">
             <h2>Contact <span class="phone-emoji">📱</span></h2>
             <form>
@@ -363,6 +421,7 @@
             </footer>
         </section>
     </main>
+
     <script src="index.js"></script>
 </body>
 </html>
