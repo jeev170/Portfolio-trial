@@ -14,41 +14,49 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            padding-top: 80px; /* Account for fixed nav */
+            padding-left: 200px; /* Space for fixed nav */
         }
 
-        /* Fixed Navigation Bar */
+        /* Left Navigation Bar */
         nav {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 200px;
+            height: 100%;
             background-image: url('bg2.png');
             background-size: cover;
             background-position: center;
-            padding: 15px 0;
+            padding: 20px 0;
             z-index: 1000;
+            display: flex;
+            align-items: center;
         }
 
         nav ul {
+            width: 100%;
             display: flex;
-            justify-content: center;
-            gap: 30px;
+            flex-direction: column;
             list-style: none;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 15px 0;
+            gap: 30px;
+        }
+
+        nav ul li {
+            text-align: center;
         }
 
         nav ul li a {
-            font-size: 2em;
+            font-size: 1.5em;
             color: white;
             text-decoration: none;
             padding: 10px 20px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            display: block;
         }
 
         nav ul li a:hover {
             color: #90CAF9;
+            transform: translateX(10px);
         }
 
         /* Intro section */
@@ -60,7 +68,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            height: calc(100vh - 80px);
+            height: 100vh;
             opacity: 0.7;
         }
 
@@ -90,13 +98,6 @@
             100% { transform: rotate(0deg); }
         }
 
-        /* Section headings */
-        section h2 {
-            font-size: 2.25em;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
         /* About section */
         #about {
             background-color: #455A64;
@@ -109,6 +110,13 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Section headings */
+        section h2 {
+            font-size: 2.25em;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .motto {
@@ -277,14 +285,22 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                padding-left: 0;
+                padding-top: 60px;
+            }
+
             nav {
-                max-width: 90%;
-                margin: 0 auto;
+                width: 100%;
+                height: auto;
+                max-width: 100%;
             }
 
             nav ul {
-                gap: 15px;
-                padding: 10px 0;
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 10px;
+                gap: 10px;
             }
 
             nav ul li a {
@@ -292,12 +308,8 @@
                 padding: 8px 12px;
             }
 
-            #intro h1 {
-                font-size: 2.5em;
-            }
-
-            .motto {
-                font-size: 2em;
+            nav ul li a:hover {
+                transform: translateY(-3px);
             }
 
             .project {
@@ -309,6 +321,14 @@
             .project-image {
                 width: 100% !important;
                 max-width: 200px;
+            }
+
+            #intro h1 {
+                font-size: 2.5em;
+            }
+
+            .motto {
+                font-size: 2em;
             }
         }
 
