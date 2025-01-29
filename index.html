@@ -14,7 +14,7 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            padding-left: 200px; /* Space for fixed nav */
+            padding-left: 200px;
         }
 
         /* Left Navigation Bar */
@@ -102,7 +102,7 @@
         #about {
             background-color: #455A64;
             color: white;
-            padding: 40px 20px;
+            padding: 40px 20px 0 20px;
         }
 
         #about p, #about h2 {
@@ -139,21 +139,23 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            height: 120px;
-            margin: 20px 0;
-            background-color: #455A64;
+            height: 80px;
+            margin: 40px 0 0 0;
+            background-color: transparent;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .bike-emoji {
             display: inline-block;
             position: absolute;
-            font-size: 4em;
-            animation: bikeRide 10s linear infinite;
+            font-size: 3em;
+            bottom: 0;
+            animation: bikeRide 8s linear infinite;
         }
 
         @keyframes bikeRide {
-            0% { left: calc(100% + 100px); }
-            100% { left: -100px; }
+            0% { left: calc(100% + 50px); }
+            100% { left: -50px; }
         }
 
         /* Skills section */
@@ -189,11 +191,11 @@
         .project {
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
-            gap: 20px;
+            align-items: center;
+            gap: 30px;
             margin-bottom: 30px;
-            padding: 15px;
-            max-width: 300px;
+            padding: 20px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             background-color: rgba(255, 255, 255, 0.1);
@@ -201,24 +203,34 @@
         }
 
         .project-image {
-            width: 120px !important;
-            height: auto;
+            width: 300px !important;
+            height: 200px;
             object-fit: cover;
             border-radius: 4px;
         }
 
-        .project div {
+        .project-content {
             flex: 1;
             text-align: left;
         }
 
         .project h3 {
-            font-size: 1.2em;
-            margin-bottom: 8px;
+            font-size: 1.4em;
+            margin-bottom: 12px;
         }
 
         .project p {
-            font-size: 0.9em;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .projects-more {
+            text-align: center;
+            color: #ffffff;
+            font-size: 1.1em;
+            margin-top: 30px;
+            opacity: 0.8;
+            font-style: italic;
         }
 
         /* Contact section */
@@ -264,14 +276,18 @@
             background-color: #37474F;
         }
 
+        /* Updated footer styles */
         footer {
             margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         footer a {
-            margin: 0 10px;
             display: inline-block;
             transition: transform 0.3s;
+            padding: 5px;
         }
 
         footer a:hover {
@@ -279,33 +295,36 @@
         }
 
         footer img {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             body {
                 padding-left: 0;
-                padding-top: 60px;
+                padding-top: 50px;
             }
 
             nav {
                 width: 100%;
-                height: auto;
-                max-width: 100%;
+                height: 50px;
+                position: fixed;
+                top: 0;
             }
 
             nav ul {
                 flex-direction: row;
                 justify-content: space-around;
-                padding: 10px;
-                gap: 10px;
+                padding: 5px;
+                gap: 5px;
             }
 
             nav ul li a {
-                font-size: 1.2em;
-                padding: 8px 12px;
+                font-size: 1em;
+                padding: 5px 8px;
             }
 
             nav ul li a:hover {
@@ -315,12 +334,19 @@
             .project {
                 flex-direction: column;
                 align-items: center;
-                max-width: 250px;
+                max-width: 100%;
+                padding: 15px;
             }
 
             .project-image {
                 width: 100% !important;
-                max-width: 200px;
+                max-width: 300px;
+                height: 200px;
+            }
+
+            .project-content {
+                width: 100%;
+                text-align: center;
             }
 
             #intro h1 {
@@ -329,6 +355,19 @@
 
             .motto {
                 font-size: 2em;
+            }
+
+            footer img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .bike-container {
+                height: 60px;
+            }
+            
+            .bike-emoji {
+                font-size: 2.5em;
             }
         }
 
@@ -346,8 +385,9 @@
                 font-size: 1.5em;
             }
 
-            .project {
-                max-width: 200px;
+            footer img {
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -382,10 +422,10 @@
                         of life while living adventurously. With a peaceful and happy mindset,
                         I balance childlike wonder with the maturity to tackle challenges, always driven by curiosity and a love for learning.
                     </p>
-                    <div class="bike-container">
-                        <span class="bike-emoji">🏍️</span>
-                    </div>
                 </div>
+            </div>
+            <div class="bike-container">
+                <span class="bike-emoji">🏍️</span>
             </div>
         </section>
 
@@ -410,18 +450,19 @@
             <h2>Projects</h2>
             <div class="project">
                 <img src="project1.png" alt="Expense Tracker" class="project-image">
-                <div>
+                <div class="project-content">
                     <h3>Expense Tracker</h3>
                     <p>Developed a tracker using C to categorize expenses.</p>
                 </div>
             </div>
             <div class="project">
                 <img src="project2.png" alt="Timetable Generator" class="project-image">
-                <div>
+                <div class="project-content">
                     <h3>Timetable Generator</h3>
                     <p>Developed a timetable generator for institutions using C.</p>
                 </div>
             </div>
+            <p class="projects-more">... and developing more!</p>
         </section>
 
         <section id="contact">
@@ -433,7 +474,7 @@
                 <button>Let's Connect</button>
             </form>
             <footer>
-                               <a href="https://github.com/jeev170" target="_blank">
+                <a href="https://github.com/jeev170" target="_blank">
                     <img src="github-image.png" alt="GitHub">
                 </a>
                 <a href="https://www.linkedin.com/in/jeevietha-ramesh-kumar-399a3032b/" target="_blank">
