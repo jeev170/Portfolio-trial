@@ -22,7 +22,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
 
     // Displaying a simple alert for demo purposes
-    alert('Thank you for contacting me! I will get back to you soon.');
+    alert('Received your message! Will get to you soon');
 
     // Reset the form
     this.reset();
