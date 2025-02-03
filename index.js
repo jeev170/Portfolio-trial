@@ -1,7 +1,4 @@
 
-// JavaScript functionality for portfolio
-
-// Smooth Scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -17,13 +14,10 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Placeholder for form submission functionality
 document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Displaying a simple alert for demo purposes
     alert('Received your message! Will get to you soon');
 
-    // Reset the form
     this.reset();
 });
