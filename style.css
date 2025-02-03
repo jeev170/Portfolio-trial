@@ -69,7 +69,6 @@ main {
     border-radius: 10px;
 }
 
-/* Skills Section */
 #skills {
     padding: 40px;
     background-color: #f9f9f9;
@@ -88,7 +87,6 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Projects Section */
 #projects {
     padding: 40px;
     background-color: #e3f2fd;
@@ -101,7 +99,6 @@ main {
     margin-right: 10px;
 }
 
-/* Contact Section */
 #contact {
     padding: 40px;
     background-color: #f0f4f8;
