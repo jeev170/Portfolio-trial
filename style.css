@@ -1,6 +1,4 @@
-//style.css
 
-/* General Reset */
 body, h1, h2, h3, p, ul, li, a, img {
     margin: 0;
     padding: 0;
@@ -12,7 +10,6 @@ body {
     margin: 0;
 }
 
-/* Navigation Bar */
 nav {
     position: fixed;
     top: 0;
@@ -40,13 +37,11 @@ nav ul li a:hover {
     color: #007BFF;
 }
 
-/* Main Content */
 main {
     margin-left: 200px;
 }
 
-/* Hero Section */
-#hero {
+#about {
     height: 300px;
     display: flex;
     align-items: center;
@@ -57,7 +52,6 @@ main {
     text-align: center;
 }
 
-/* About Section */
 #about {
     padding: 40px;
     display: flex;
